@@ -8,5 +8,9 @@ public class TagsManager
     public const string bullet = "Bullet";
     public const string gaina = "Gaina";
     public const string vadim = "Vadim";
+
+    //Audio sounds
+    public const string GameSound = "Game Sound";
+    public const string ScuipatSound = "Scuipat";
 }
 

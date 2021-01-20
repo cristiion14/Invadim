@@ -9,7 +9,7 @@ public class Vadim : MonoBehaviour
     float currentHealth;
     float maxHealth;
 
-    float speed = 30;
+    float speed = 10;
     Vector3 velocity;
      void Start()
     {
