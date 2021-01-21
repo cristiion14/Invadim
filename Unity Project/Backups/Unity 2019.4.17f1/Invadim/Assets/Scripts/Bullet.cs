@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
    public GameObject vadim;
     float countDown;
     float delay = 5f;
+
     private void Start()
     {
         countDown = delay;
@@ -22,6 +23,7 @@ public class Bullet : MonoBehaviour
     private void Update()
     {
         countDown -= Time.deltaTime;
+
 
         if(countDown <=0)
         {

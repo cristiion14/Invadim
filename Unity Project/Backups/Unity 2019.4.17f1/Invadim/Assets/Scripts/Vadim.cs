@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Vadim : MonoBehaviour
 {
+    public int lifes = 3;
+
     public GameObject loseMessage;
     Transform initialPos;
 
@@ -16,8 +18,12 @@ public class Vadim : MonoBehaviour
 
     GameObject vadimToInstantiate;
     Quaternion initialRot;
+
+    GameManager GM;
+    bool hasDied = false;
     void Start()
     {
+        GM = GameObject.Find("GM").GetComponent<GameManager>();
         vadimToInstantiate = this.gameObject;
         initialPos = transform;
         initialRot = transform.rotation;
@@ -46,23 +52,40 @@ public class Vadim : MonoBehaviour
 
     void Update()
     {
-        Move();
-        transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, Time.deltaTime * 5f);
+        if (!hasDied)
+        {
+            Move();
+            transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, Time.deltaTime * 5f);
+        }
     }
 
    public void TakeDMG(float ammout)
     {
         currentHealth -= ammout;
         transform.rotation = Quaternion.Euler(0f, 0f, 30f);
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && !hasDied)
         {
+            //play death song 
+            GM.audioManager.Play(TagsManager.DeathSound, false);
+
+            //stop the game theme
+            GM.audioManager.Stop(TagsManager.GameSound);
+
+            //show the lose message
             loseMessage.SetActive(true);
+
+            //restart level
             StartCoroutine(RestartLevel(3f));
+
+            hasDied = true;
+            lifes--;
+            
         }
     }
     IEnumerator RestartLevel(float t)
     {
         yield return new WaitForSeconds(t);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -13,6 +13,8 @@ public class Shooting : MonoBehaviour
 
     float timeToDestroy = 3f;
 
+   public int nrScuipat = 1;
+   public bool hasPowerUp = false;
     private void Awake()
     {
         //getting a reference to the game manager
@@ -20,8 +22,32 @@ public class Shooting : MonoBehaviour
     }
     void Shoot()
     {
+        switch(nrScuipat)
+        {
+            case 1:
+                {
+                    GM.playerBullets.Add(Instantiate(bullet, new Vector3(vadimTrigger.transform.position.x, vadimTrigger.transform.position.y), Quaternion.identity));
+                    break;
+                }
+            case 2:
+                {
+                    GM.playerBullets.Add(Instantiate(bullet, new Vector3(vadimTrigger.transform.position.x, vadimTrigger.transform.position.y), Quaternion.identity));
+                    GM.playerBullets.Add(Instantiate(bullet, new Vector3(vadimTrigger.transform.position.x, vadimTrigger.transform.position.y+.25f), Quaternion.identity));
+                    break;
+                }
+            case 3:
+                {
+                    GM.playerBullets.Add(Instantiate(bullet, new Vector3(vadimTrigger.transform.position.x, vadimTrigger.transform.position.y), Quaternion.identity));
+                    GM.playerBullets.Add(Instantiate(bullet, new Vector3(vadimTrigger.transform.position.x, vadimTrigger.transform.position.y+.25f), Quaternion.identity));
+                    GM.playerBullets.Add(Instantiate(bullet, new Vector3(vadimTrigger.transform.position.x, vadimTrigger.transform.position.y-.25f), Quaternion.identity));
+                    break;
+                }
+
+               
+
+
+        }
         //shoot the bullet
-       GM.playerBullets.Add(Instantiate(bullet, new Vector3(vadimTrigger.transform.position.x, vadimTrigger.transform.position.y), Quaternion.identity));
 
         //apply shooting animation
         vadimAnim.Scuipa();
@@ -41,6 +67,16 @@ public class Shooting : MonoBehaviour
         countDown -= Time.deltaTime;
 
 
+        if (Input.GetKeyDown(KeyCode.P) && nrScuipat<=3)
+            nrScuipat++;
 
+        Debug.LogError("cate gloante ar trb sa traga: " + nrScuipat);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == TagsManager.PowerUp)
+            nrScuipat++;
     }
 }

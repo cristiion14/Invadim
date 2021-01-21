@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 27700186}
   - component: {fileID: 27700185}
   - component: {fileID: 27700184}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Enemy (3)
   m_TagString: Gaina
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 180615697}
   - component: {fileID: 180615698}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 257308717}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 279450663}
   - component: {fileID: 279450664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 338091299}
   - component: {fileID: 338091300}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 351858331}
   - component: {fileID: 351858332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390170536}
   - component: {fileID: 390170537}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475456648}
   - component: {fileID: 475456649}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502482696}
   - component: {fileID: 502482697}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517369707}
   - component: {fileID: 517369708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +923,7 @@ GameObject:
   - component: {fileID: 640015444}
   - component: {fileID: 640015443}
   - component: {fileID: 640015442}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Enemy (2)
   m_TagString: Gaina
   m_Icon: {fileID: 0}
@@ -1080,7 +1080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 841819348}
   - component: {fileID: 841819349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1161,7 +1161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 965371418}
   - component: {fileID: 965371419}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 1032719859}
   - component: {fileID: 1032719858}
   - component: {fileID: 1032719857}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Enemy (1)
   m_TagString: Gaina
   m_Icon: {fileID: 0}
@@ -1424,7 +1424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191886631}
   - component: {fileID: 1191886632}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,6 +1528,7 @@ MonoBehaviour:
   audioManager: {fileID: 1207668269}
   playerBullets: []
   enemyBullets: []
+  powerUp: {fileID: 0}
 --- !u!4 &1207668268
 Transform:
   m_ObjectHideFlags: 0
@@ -1567,6 +1568,12 @@ MonoBehaviour:
     volume: 0.47
     pitch: 1
     source: {fileID: 0}
+  - name: DeathSound
+    clip: {fileID: 8300000, guid: 12f7dc0c39e4d1f4784ead902cf56687, type: 3}
+    loop: 0
+    volume: 0.75
+    pitch: 0.93
+    source: {fileID: 0}
 --- !u!1 &1225284929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,7 +1584,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225284930}
   - component: {fileID: 1225284931}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1864,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262996736}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 12f7dc0c39e4d1f4784ead902cf56687, type: 3}
@@ -1959,7 +1966,7 @@ GameObject:
   - component: {fileID: 1280853107}
   - component: {fileID: 1280853106}
   - component: {fileID: 1280853105}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Enemy (4)
   m_TagString: Gaina
   m_Icon: {fileID: 0}
@@ -2196,7 +2203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342937103}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2227,7 +2234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357791777}
   - component: {fileID: 1357791778}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2275,7 +2282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380754411}
   - component: {fileID: 1380754412}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2397,7 +2404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462742872}
   - component: {fileID: 1462742873}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2444,7 +2451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1586327489}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2475,7 +2482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1695288424}
   - component: {fileID: 1695288425}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2523,7 +2530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1702844875}
   - component: {fileID: 1702844876}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2604,7 +2611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731793300}
   - component: {fileID: 1731793301}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2684,7 +2691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1744414691}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2715,7 +2722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1826290212}
   - component: {fileID: 1826290213}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2949,7 +2956,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1921155535}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3114,7 +3121,7 @@ GameObject:
   - component: {fileID: 1992046328}
   - component: {fileID: 1992046327}
   - component: {fileID: 1992046326}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Enemy (5)
   m_TagString: Gaina
   m_Icon: {fileID: 0}
@@ -3277,7 +3284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2067474986}
   - component: {fileID: 2067474987}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3698,41 +3705,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1143771624}
     m_Modifications:
-    - target: {fileID: 5302215448943444450, guid: 0b51face5d564fc42bffe14272e8aca2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 5302215449420528320, guid: 0b51face5d564fc42bffe14272e8aca2,
-        type: 3}
-      propertyPath: deadZoneLeft
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5302215449420528320, guid: 0b51face5d564fc42bffe14272e8aca2,
-        type: 3}
-      propertyPath: deadZoneRight
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5302215449420528321, guid: 0b51face5d564fc42bffe14272e8aca2,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 12.194619
-      objectReference: {fileID: 0}
-    - target: {fileID: 5302215449420528321, guid: 0b51face5d564fc42bffe14272e8aca2,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 10.047605
-      objectReference: {fileID: 0}
-    - target: {fileID: 5302215449420528321, guid: 0b51face5d564fc42bffe14272e8aca2,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.6472173
-      objectReference: {fileID: 0}
-    - target: {fileID: 5302215449420528321, guid: 0b51face5d564fc42bffe14272e8aca2,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -1.6872029
-      objectReference: {fileID: 0}
     - target: {fileID: 5302215449420528324, guid: 0b51face5d564fc42bffe14272e8aca2,
         type: 3}
       propertyPath: m_Name

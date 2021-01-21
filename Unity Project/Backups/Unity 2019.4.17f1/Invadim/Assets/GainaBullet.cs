@@ -20,7 +20,6 @@ public class GainaBullet : MonoBehaviour
         vadim = GameObject.Find("Vadim").GetComponent<Vadim>();
         countDown = delay;
         rb = GetComponent<Rigidbody2D>();
-        //getting reference to vadim
         rb.AddForce(Vector2.left * force, ForceMode2D.Force);
     }
 
@@ -40,6 +39,11 @@ public class GainaBullet : MonoBehaviour
         {
             Debug.Log("Collision with+ " + collision.collider.name);
             vadim.TakeDMG(damage);
+
+            //lower the nr of projectiles when hit
+            if (vadim.GetComponent<Shooting>().nrScuipat > 1)
+                vadim.GetComponent<Shooting>().nrScuipat--;
+
             Destroy(gameObject);
         }
     }
