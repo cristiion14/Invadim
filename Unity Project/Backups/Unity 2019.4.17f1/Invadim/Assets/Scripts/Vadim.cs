@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Vadim : MonoBehaviour
 {
-
+    public GameObject loseMessage;
     Transform initialPos;
-    float lives = 3;
 
     float initialHealth = 100f;
-    float currentHealth;
-    float maxHealth;
+    public float currentHealth;
 
     float speed = 10;
     Vector3 velocity;
 
     GameObject vadimToInstantiate;
+    Quaternion initialRot;
     void Start()
     {
         vadimToInstantiate = this.gameObject;
         initialPos = transform;
+        initialRot = transform.rotation;
         currentHealth = initialHealth;
     }
 
@@ -35,41 +36,33 @@ public class Vadim : MonoBehaviour
 
         //applying direction to the position of the player
         transform.position += velocity * speed * Time.deltaTime;
-        transform.localEulerAngles = new Vector3(0, 0, velocity.y);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -7.8f, 8f),
+                                         Mathf.Clamp(transform.position.y, -4f, 4.3f), 0f
+                                                    );
+        if (currentHealth <= 0f)
+            transform.rotation = Quaternion.Euler(0, 0, 90f);
+        //transform.localEulerAngles = new Vector3(0, 0, velocity.y);
     }
 
     void Update()
     {
         Move();
-        Die();
+        transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, Time.deltaTime * 5f);
     }
 
    public void TakeDMG(float ammout)
     {
         currentHealth -= ammout;
-    }
-
-   public void Die()
-    {
-        if (currentHealth <= 0 && lives>=0)
+        transform.rotation = Quaternion.Euler(0f, 0f, 30f);
+        if (currentHealth <= 0)
         {
-            lives--;
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            InitializeVariables();
-
+            loseMessage.SetActive(true);
+            StartCoroutine(RestartLevel(3f));
         }
-
     }
-
-    void InitializeVariables()
+    IEnumerator RestartLevel(float t)
     {
-        if (lives >= 0)
-        {
-            currentHealth = initialHealth;
-            gameObject.GetComponent<SpriteRenderer>().enabled = true;
-
-        }
-        else
-            return;
+        yield return new WaitForSeconds(t);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

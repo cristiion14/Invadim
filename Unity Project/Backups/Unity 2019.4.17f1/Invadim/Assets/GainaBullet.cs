@@ -38,8 +38,9 @@ public class GainaBullet : MonoBehaviour
     {
         if (collision.collider.tag == TagsManager.vadim)
         {
-            Debug.LogError("Collision with+ " + collision.collider.name);
+            Debug.Log("Collision with+ " + collision.collider.name);
             vadim.TakeDMG(damage);
+            Destroy(gameObject);
         }
     }
 }
