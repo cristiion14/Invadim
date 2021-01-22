@@ -49,6 +49,8 @@ public class Gaina : MonoBehaviour
         Shoot();
         timeSinceShot += Time.deltaTime;
 
+        if (gameObject.tag == TagsManager.CTP)
+            damage = 15;
     }
 
 
