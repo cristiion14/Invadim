@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     List<GameObject> instantiatedPowerUps = new List<GameObject>();
 
-    float initialTimeToSpawn = 10f;
+    float initialTimeToSpawn = 13f;
     float timeToSpawn;
     public GameObject powerUp;
 
@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
         if(vadim.hasDied)
         {
             GameWin.enabled = true;
-            GameWin.text = "OOF, Vadim was killed by CTP and his army....";
+            GameWin.text = "OOf, Vadim was killed by CTP and his army....";
         }
     }
 

@@ -643,4 +643,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/GitHub/InvadimRepo/Invadim/Unity Project/Backups/Unity 2019.4.17f1/Invadim/Builds/LastBuild/Invadim.exe
+  playerPath: C:/Users/iarus/Desktop/INVADIM_BUILD/Invadim.exe
