@@ -6,8 +6,7 @@ public class GainaBullet : MonoBehaviour
 {
     float force = 400f;
 
-    [SerializeField]
-    float damage = 50;
+    float damage = 10;
     
     Rigidbody2D rb;
 
@@ -20,7 +19,6 @@ public class GainaBullet : MonoBehaviour
         vadim = GameObject.Find("Vadim").GetComponent<Vadim>();
         countDown = delay;
         rb = GetComponent<Rigidbody2D>();
-        //getting reference to vadim
         rb.AddForce(Vector2.left * force, ForceMode2D.Force);
     }
 
@@ -36,10 +34,16 @@ public class GainaBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == TagsManager.vadim)
+        if (collision.collider.tag == TagsManager.vadim && !vadim.GetComponent<Vadim>().hasDied)
         {
-            Debug.LogError("Collision with+ " + collision.collider.name);
+            Debug.Log("Collision with+ " + collision.collider.name);
             vadim.TakeDMG(damage);
+
+            //lower the nr of projectiles when hit
+            if (vadim.GetComponent<Shooting>().nrScuipat > 1)
+                vadim.GetComponent<Shooting>().nrScuipat--;
+
+            Destroy(gameObject);
         }
     }
 }

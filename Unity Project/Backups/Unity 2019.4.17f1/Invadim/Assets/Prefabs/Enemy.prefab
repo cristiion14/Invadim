@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 102379189}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 9090075378274889741}
   - component: {fileID: 9090075378274889740}
   - component: {fileID: 1481462647489664892}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Gaina
   m_Icon: {fileID: 0}
@@ -129,10 +129,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   damage: 100
-  deadZoneLeft: {fileID: 0}
-  deadZoneRight: {fileID: 0}
   bullet: {fileID: 2807360149258656137, guid: e7d26855f24130d45b18d11604059e03, type: 3}
   trigger: {fileID: 102379189}
+  vFreq: 0
+  vAmp: 0
+  vOffset: 0
+  vPhase: 0
+  hFreq: 0
+  hAmp: 0
+  hOffset: 0
+  hPhase: 0
+  theZ: 0
   canMoveLeft: 1
 --- !u!61 &9090075378274889740
 BoxCollider2D:
