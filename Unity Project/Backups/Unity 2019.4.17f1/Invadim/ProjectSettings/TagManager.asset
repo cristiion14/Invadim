@@ -8,6 +8,8 @@ TagManager:
   - Gaina
   - Vadim
   - EnemySpawner
+  - PowerUp
+  - CTP
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - EnemyBullet
   - PlayerBullet
   - Enemy
-  - 
+  - PowerUp
   - 
   - 
   - 

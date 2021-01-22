@@ -9,6 +9,7 @@ public class TagsManager
     public const string gaina = "Gaina";
     public const string PowerUp = "PowerUp";
     public const string vadim = "Vadim";
+    public const string CTP = "CTP";
 
     //Audio sounds
     public const string GameSound = "Game Sound";

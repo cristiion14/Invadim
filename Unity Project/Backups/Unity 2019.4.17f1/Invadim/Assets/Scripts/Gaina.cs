@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gaina : MonoBehaviour
 {
@@ -9,10 +10,8 @@ public class Gaina : MonoBehaviour
 
     float timeBTWShoots = 3f;
 
-    [SerializeField]
-    float health = 100f;
+   public float health = 100f;
 
-    [SerializeField]
     float damage = 25;
 
     float speed = 5f;
@@ -30,6 +29,9 @@ public class Gaina : MonoBehaviour
     public float hFreq, hAmp, hOffset, hPhase;
     public float theZ;
     float timeSinceShot = 0f;
+
+
+    float rangeOffset = 2f;
     private void Start()
     {
         GM = GameObject.Find("GM").GetComponent<GameManager>();
@@ -46,6 +48,7 @@ public class Gaina : MonoBehaviour
         Movement();
         Shoot();
         timeSinceShot += Time.deltaTime;
+
     }
 
 
@@ -91,14 +94,32 @@ public class Gaina : MonoBehaviour
         }
     }
 
+    bool hasDiedCTP = false;
     void TakeDMG(float ammout)
     {
         health -= ammout;
         if (health <= 0)
         {
+            if(gameObject.tag == TagsManager.CTP)
+            {
+                //GAME OVER!!!
+                GM.GameWin.enabled = true;
+                vadim.enabled = false;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            }
             enemySpawner.SpawnEnemy();
             Destroy(gameObject);
-
         }
+    }
+
+
+    public bool targetFound(Vector3 target)
+    {
+        float distance = (target - transform.position).sqrMagnitude;
+        if (distance <= rangeOffset * rangeOffset)
+            return true;
+        else
+            return false;
     }
 }

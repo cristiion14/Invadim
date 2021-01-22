@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class Vadim : MonoBehaviour
 {
+
+    float damageGaina = 10;
+
     public int lifes = 3;
 
     public GameObject loseMessage;
     Transform initialPos;
 
     float initialHealth = 100f;
+    public TextMeshProUGUI healthTXT;
+
     public float currentHealth;
 
     float speed = 10;
@@ -20,7 +26,11 @@ public class Vadim : MonoBehaviour
     Quaternion initialRot;
 
     GameManager GM;
-    bool hasDied = false;
+    public float kills;
+ public   bool hasDied = false;
+
+
+   public Image healthBarBG, partidPic;
     void Start()
     {
         GM = GameObject.Find("GM").GetComponent<GameManager>();
@@ -57,12 +67,16 @@ public class Vadim : MonoBehaviour
             Move();
             transform.rotation = Quaternion.Slerp(transform.rotation, initialRot, Time.deltaTime * 5f);
         }
+
+        healthBarBG.fillAmount = currentHealth / 100;
+        healthTXT.text = currentHealth.ToString();
     }
 
    public void TakeDMG(float ammout)
     {
         currentHealth -= ammout;
         transform.rotation = Quaternion.Euler(0f, 0f, 30f);
+
         if (currentHealth <= 0 && !hasDied)
         {
             //play death song 
@@ -72,17 +86,33 @@ public class Vadim : MonoBehaviour
             GM.audioManager.Stop(TagsManager.GameSound);
 
             //show the lose message
-            loseMessage.SetActive(true);
-
-            //restart level
-            StartCoroutine(RestartLevel(3f));
+          //  loseMessage.SetActive(true);
 
             hasDied = true;
+
             lifes--;
             
         }
+
+        if (currentHealth <= 0 && hasDied)
+            StartCoroutine(RestartLevel(3f));
     }
-    IEnumerator RestartLevel(float t)
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == TagsManager.gaina)
+        {
+            TakeDMG(damageGaina);
+
+            //lower the nr of projectiles when hit
+            if (GetComponent<Shooting>().nrScuipat > 1)
+                GetComponent<Shooting>().nrScuipat--;
+
+          //  Destroy(collision.gameObject);
+        }
+    }
+
+   public IEnumerator RestartLevel(float t)
     {
         yield return new WaitForSeconds(t);
 

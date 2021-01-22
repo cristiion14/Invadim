@@ -3,11 +3,12 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AudioManager
     - Bullet
+    - CTP
     - EnemySpawner
     - Gaina
     - GainaBullet
     - GameManager
-    - HPvadim
+    - PowerUps
     - Shooting
     - Vadim
     - VadimAnimation
@@ -64,8 +65,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
     - Class: 91
@@ -77,47 +76,49 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11248}
+      Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11258}
+      Script: {instanceID: 11284}
     - Class: 114
-      Script: {instanceID: 11456}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 11644}
+      Script: {instanceID: 11670}
     - Class: 114
-      Script: {instanceID: 11784}
-    - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11810}
     - Class: 114
       Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11898}
     - Class: 114
-      Script: {instanceID: 12020}
+      Script: {instanceID: 11992}
     - Class: 114
-      Script: {instanceID: 12456}
+      Script: {instanceID: 12046}
     - Class: 114
-      Script: {instanceID: 12470}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12654}
+      Script: {instanceID: 12496}
     - Class: 114
-      Script: {instanceID: 12716}
+      Script: {instanceID: 12680}
     - Class: 114
-      Script: {instanceID: 12774}
+      Script: {instanceID: 12742}
     - Class: 114
-      Script: {instanceID: 12790}
+      Script: {instanceID: 12800}
     - Class: 114
       Script: {instanceID: 12816}
     - Class: 114
-      Script: {instanceID: 12872}
+      Script: {instanceID: 12842}
     - Class: 114
-      Script: {instanceID: 13064}
-    - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 12898}
     - Class: 114
       Script: {instanceID: 13090}
     - Class: 114
-      Script: {instanceID: 21712}
+      Script: {instanceID: 13100}
+    - Class: 114
+      Script: {instanceID: 13116}
+    - Class: 114
+      Script: {instanceID: 20194}
+    - Class: 114
+      Script: {instanceID: 26932}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -143,7 +144,7 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 454e159ddaf43063bf5e96373f9dcb9e
+      Hash: 30d40fdf367c04170be6bfcbcebeaa1a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Shooting
@@ -317,7 +318,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: be7c58ece932a007a8001107d96fa9b9
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GainaBullet
@@ -353,13 +354,13 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: e2ae3c966b5f2bbf7bcd20f1707d96d5
+      Hash: 2b728facd78143c9728a3e8fa64a6941
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemySpawner
   - hash:
       serializedVersion: 2
-      Hash: 95f1476d1366be07d5259608e72fa835
+      Hash: 6b5a415eaa0f86538c7805e6ae84fea7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Vadim
@@ -491,7 +492,7 @@ ScriptsOnlyBuild:
     className: Bullet
   - hash:
       serializedVersion: 2
-      Hash: 2ce1f16b536464ed38b793961984ce67
+      Hash: 2903e5b125a6441a3bd9ea86b8ab3c69
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Gaina
@@ -593,7 +594,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 84d565bc1e80c38f34fafe381f466f80
+      Hash: 7bd2a93d140a53053fdc389a361434f5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -611,6 +612,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: a6c48cc9120064110d1ab7ed66e985dc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HPvadim
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -623,11 +630,17 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: a6c48cc9120064110d1ab7ed66e985dc
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: HPvadim
+    className: PowerUps
+  - hash:
+      serializedVersion: 2
+      Hash: 140b81842248cb1eb97a1a122a67f90a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CTP
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/iarus/Desktop/InVadimBuild/Invadim.exe
+  playerPath: D:/GitHub/InvadimRepo/Invadim/Unity Project/Backups/Unity 2019.4.17f1/Invadim/Builds/Invadim.exe

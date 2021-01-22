@@ -13,9 +13,9 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
+        vadim = GameObject.Find("Vadim");
         countDown = delay;
         rb = GetComponent<Rigidbody2D>();
-        //getting reference to vadim
         rb.AddForce(Vector2.right * force, ForceMode2D.Force);
     }
 
@@ -34,6 +34,9 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == TagsManager.gaina)
+        {
+         //   vadim.GetComponent<Vadim>().kills++;
             Destroy(gameObject);
+        }
     }
 }

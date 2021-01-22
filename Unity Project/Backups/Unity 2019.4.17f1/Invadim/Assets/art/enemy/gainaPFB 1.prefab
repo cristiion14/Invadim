@@ -301,9 +301,10 @@ GameObject:
   - component: {fileID: 5302215449420528320}
   - component: {fileID: 5302215449420528321}
   - component: {fileID: 2538932684184657329}
+  - component: {fileID: 7331117981907725794}
   m_Layer: 6
   m_Name: gainaPFB 1
-  m_TagString: Gaina
+  m_TagString: CTP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,7 +389,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  damage: 10
   bullet: {fileID: 2807360149258656137, guid: e7d26855f24130d45b18d11604059e03, type: 3}
   trigger: {fileID: 4013604189376554104}
   vFreq: 0.33
@@ -448,3 +448,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7331117981907725794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302215449420528324}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c34b35f965d89f4a9e3a022756be04e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  hasDied: 0
+  ctpPrefab: {fileID: 5302215449420528324}

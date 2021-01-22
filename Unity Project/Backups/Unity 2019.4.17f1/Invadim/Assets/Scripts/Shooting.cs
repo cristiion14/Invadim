@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Shooting : MonoBehaviour
 {
     public GameObject bullet;
 
     GameManager GM;
-   public VadimAnimation vadimAnim;
+    public VadimAnimation vadimAnim;
     float countDown = 3f;
     public Transform vadimTrigger;
 
     float timeToDestroy = 3f;
 
-   public int nrScuipat = 1;
-   public bool hasPowerUp = false;
+    public int nrScuipat = 1;
+    public TextMeshProUGUI nrScuipatTXT;
+    public bool hasPowerUp = false;
+    public GameObject powerUp;
     private void Awake()
     {
         //getting a reference to the game manager
@@ -72,11 +74,18 @@ public class Shooting : MonoBehaviour
 
         Debug.LogError("cate gloante ar trb sa traga: " + nrScuipat);
 
+        nrScuipatTXT.text = nrScuipat.ToString();
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.tag == TagsManager.PowerUp)
+        if(collision.isTrigger && nrScuipat<3)
+        {
+            Debug.LogError("A atins powerup!");
             nrScuipat++;
+            Destroy(collision.gameObject);
+        }
+
     }
 }
